@@ -1,0 +1,33 @@
+{
+  "name": "csce411-finalproject",
+  "version": "1.0.0",
+  "description": "End-to-End Entity-Relationship (E-R) Data Analysis Workflow",
+  "main": "./server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "cd server && node server.js",
+    "server": "cd server && nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev-install": "concurrently \"npm install\" \"npm run client-install\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "nodemon": "^2.0.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msichterman/CSCE411-FinalProject.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msichterman/CSCE411-FinalProject/issues"
+  },
+  "homepage": "https://github.com/msichterman/CSCE411-FinalProject#readme"
+}

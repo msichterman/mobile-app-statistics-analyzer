@@ -1,3 +1,33 @@
-.App {
+:root {
+  --main-color: #06c;
+  --secondary-color: #36454f;
+  --secondary-bg: #eee;
+}
+
+h1 {
   text-align: center;
+}
+
+p {
+  color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+#intro {
+  padding: 0 100px 15px 100px;
+}
+
+section {
+  height: 400px;
+  padding: 20px 100px;
+}
+
+section:nth-child(odd) {
+  background-color: var(--secondary-bg);
 }
