@@ -21,7 +21,7 @@ const ApplicationSchema = new Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   rating_count: {
@@ -33,15 +33,11 @@ const ApplicationSchema = new Schema({
     required: true,
   },
   user_rating: {
-    type: Double,
-    required: true,
-  },
-  user_rating: {
-    type: Double,
+    type: Number,
     required: true,
   },
   user_rating_ver: {
-    type: Double,
+    type: Number,
     required: true,
   },
   ver: {
@@ -56,6 +52,28 @@ const ApplicationSchema = new Schema({
     type: String,
     required: true,
   },
+  sup_devices: {
+    num: {
+      type: Number,
+      required: true,
+    },
+  },
+  ipadSc_urls: {
+    num: {
+      type: Number,
+      required: true,
+    },
+  },
+  lang: {
+    num: {
+      type: Number,
+      required: true,
+    },
+  },
+  vpp_lic: {
+    type: Number,
+    required: true,
+  },
 });
 
-module.exports = Item = mongoose.model("application", ApplicaionSchema);
+module.exports = Item = mongoose.model("Application", ApplicationSchema);

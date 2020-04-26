@@ -22,7 +22,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // Use Routes
-// app.use("/api/products", require("./routes/api/products"));
+app.use("/api/applications", require("./routes/api/applications"));
 // app.use("/api/users", require("./routes/api/users"));
 // app.use("/api/auth", require("./routes/api/auth"));
 

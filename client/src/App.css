@@ -1,11 +1,15 @@
 :root {
-  --main-color: #06c;
+  --main-color: #1774e4;
   --secondary-color: #36454f;
   --secondary-bg: #eee;
 }
 
 h1 {
   text-align: center;
+}
+
+#course {
+  color: var(--main-color);
 }
 
 p {
@@ -30,4 +34,8 @@ section {
 
 section:nth-child(odd) {
   background-color: var(--secondary-bg);
+}
+
+.main-color {
+  color: var(--main-color);
 }
