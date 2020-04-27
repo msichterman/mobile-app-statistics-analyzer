@@ -6,19 +6,25 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "cd server && node server.js",
-    "server": "cd server && nodemon server.js",
+    "server": "cd server && nodemon server.js --exec babel-node --presets babel-preset-env",
     "client": "npm start --prefix client",
-    "dev-install": "concurrently \"npm install\" \"npm run client-install\"",
+    "dev-install": "npm install && npm run client-install",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "concurrently": "^5.2.0",
     "config": "^3.3.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.9.10",
+    "mongoose": "^5.9.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^2.0.3"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/msichterman/CSCE411-FinalProject.git"

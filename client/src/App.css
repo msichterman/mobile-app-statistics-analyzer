@@ -8,6 +8,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  color: var(--main-color);
+}
+
 #course {
   color: var(--main-color);
 }
@@ -38,4 +42,8 @@ section:nth-child(odd) {
 
 .main-color {
   color: var(--main-color);
+}
+
+label {
+  color: var(--secondary-color);
 }

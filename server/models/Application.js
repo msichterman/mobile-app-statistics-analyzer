@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema, model } from "mongoose";
 
 // Create Schema
 const ApplicationSchema = new Schema({
@@ -76,4 +75,6 @@ const ApplicationSchema = new Schema({
   },
 });
 
-module.exports = Item = mongoose.model("Application", ApplicationSchema);
+const Application = model("application", ApplicationSchema);
+
+export default Application;

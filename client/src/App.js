@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import AppRatingCount from "./components/AppRatingCount/AppRatingCount";
 
 function App() {
   return (
@@ -96,6 +97,12 @@ function App() {
           </a>{" "}
           to create interactive visualizations for the data.
         </p>
+        <hr></hr>
+        <h3>
+          App Rating Count Totals w/ User Rating & Price Tooltips (Choose Apps
+          by Genre)
+        </h3>
+        <AppRatingCount />
       </section>
     </div>
   );
