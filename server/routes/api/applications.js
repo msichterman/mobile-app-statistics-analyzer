@@ -5,6 +5,24 @@ import Application from "../../models/Application";
 
 const router = Router();
 
+// @route GET api/applications/price-ratings
+// @desc    Get All Applications price, rating count, rating, and genre
+router.get("/price-ratings", async (req, res) => {
+  try {
+    // Finds the distinct genres
+    const applications = await Application.find(
+      {},
+      "track_name price rating_count_tot user_rating prime_genre"
+    );
+
+    if (!applications) throw Error("No applications found");
+
+    res.status(200).json(applications);
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
+});
+
 // @route   GET api/applications/cost
 // @desc    Get all applications costing greater than $20
 router.get("/cost", async (req, res) => {
@@ -59,6 +77,21 @@ router.get("/:genre", async (req, res) => {
       { prime_genre: req.params.genre },
       "track_name price rating_count_tot user_rating"
     );
+    if (!applications) throw Error("No applications found");
+
+    res.status(200).json(applications);
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
+});
+
+// @route   GET api/applications/
+// @desc    Get All Apps
+router.get("/", async (req, res) => {
+  try {
+    // Finds the distinct genres
+    const applications = await Application.find();
+
     if (!applications) throw Error("No applications found");
 
     res.status(200).json(applications);

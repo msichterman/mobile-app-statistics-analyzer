@@ -1,34 +1,20 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 
-import "./AppRatingCount.css";
-import { getGenres } from "../../api";
-
-import Select from "react-select";
+import "./PriceRatingCount.css";
 
 export default function AppRatingCount() {
-  const [genre, setGenre] = useState(null);
-  const [options, setOptions] = useState([]);
   const [containerClass, setContainerClass] = useState("");
 
-  const d3Container = useRef(null);
-
-  const handleChange = (e) => {
-    setGenre(e);
-  };
-
-  // Retrieve data from the database via API call on page load
-  useEffect(() => {
-    setOptions(getGenres());
-  }, []);
+  const d3Container3 = useRef(null);
 
   useEffect(() => {
-    if (genre && d3Container.current) {
+    if (d3Container3.current) {
       const margin = 100;
       const width = 1000 - 2 * margin;
       const height = 600 - 2 * margin;
 
-      var svg = d3.select(d3Container.current);
+      var svg = d3.select(d3Container3.current);
 
       // Remove all if the svg is being re-rendered
       svg.selectAll("*").remove();
@@ -44,11 +30,11 @@ export default function AppRatingCount() {
       const xScale = d3.scaleLinear().range([0, width]);
 
       // Make a direct call to the API to get the JSON data
-      d3.json(`http://localhost:5000/api/applications/${genre.value}`)
+      d3.json(`http://localhost:5000/api/applications/price-ratings`)
         .then((data) => {
           data.forEach((d) => {
             d.rating_count_tot = +d.rating_count_tot;
-            d.user_rating = +d.user_rating;
+            d.price = +d.price;
           });
 
           // Set the x and y scales based on the data
@@ -61,7 +47,14 @@ export default function AppRatingCount() {
             ])
             .nice();
 
-          xScale.domain([0, 5]);
+          xScale
+            .domain([
+              0,
+              d3.max(data, function (d) {
+                return d.price;
+              }),
+            ])
+            .nice();
 
           // Set the x-scale
           chart
@@ -80,9 +73,7 @@ export default function AppRatingCount() {
             .attr("text-anchor", "middle")
             .style("font-size", "24px")
             .style("text-decoration", "underline")
-            .text(
-              `User Rating vs. Total Rating Count of Apps for Genre: ${genre.label}`
-            )
+            .text(`Price vs. Total Rating Count for All Apps`)
             .style("fill", "#1774e4");
 
           // X axis label
@@ -91,7 +82,7 @@ export default function AppRatingCount() {
             .attr("x", width / 2)
             .attr("y", height + margin - 25)
             .style("text-anchor", "middle")
-            .text("User Rating");
+            .text("Price (USD)");
 
           // Y axis label
           chart
@@ -117,7 +108,7 @@ export default function AppRatingCount() {
             .enter()
             .append("circle")
             .attr("r", 5)
-            .attr("cx", (s) => xScale(s.user_rating))
+            .attr("cx", (s) => xScale(s.price))
             .attr("cy", (s) => yScale(s.rating_count_tot / 1000))
             .attr("fill", "#36454f")
             .on("mouseover", function (d, i) {
@@ -125,15 +116,15 @@ export default function AppRatingCount() {
               var tipx =
                 d3.select(this).node().getBoundingClientRect().left +
                 window.pageXOffset -
-                90;
+                80;
               var tipy =
                 d3.select(this).node().getBoundingClientRect().top +
                 window.pageYOffset -
-                90;
+                105;
               div.transition().duration(200).style("opacity", 0.9);
               div
                 .html(
-                  `<nobr>Name: ${d.track_name}</nobr><br/>Price: $${d.price}<br/>Tot. Rating Count: ${d.rating_count_tot}<br/>User Rating: ${d.user_rating}`
+                  `<nobr>Name: ${d.track_name}</nobr><br/>Price: $${d.price}<br/>Tot. Rating Count: ${d.rating_count_tot}<br/>User Rating: ${d.user_rating}<br/>Genre: ${d.prime_genre}`
                 )
                 .style("left", tipx + "px")
                 .style("top", tipy + "px");
@@ -148,21 +139,11 @@ export default function AppRatingCount() {
         })
         .catch((err) => console.log(err));
     }
-  }, [genre, d3Container]);
+  }, [d3Container3]);
 
   return (
-    <div>
-      <label htmlFor="genre-picker">Please Select an App Genre:</label>
-      <Select
-        id="genre-picker"
-        name="genre-picker"
-        value={genre}
-        onChange={handleChange}
-        options={options}
-      />
-      <div className={`${containerClass}`}>
-        <svg className="app-rating-count" ref={d3Container} />
-      </div>
+    <div className={`${containerClass}`}>
+      <svg className="app-rating-count" ref={d3Container3} />
     </div>
   );
 }

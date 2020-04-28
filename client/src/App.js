@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import PriceRatingCount from "./components/PriceRatingCount/PriceRatingCount";
 import AppRatingCount from "./components/AppRatingCount/AppRatingCount";
 import HighCostAppGenre from "./components/HighCostAppGenre/HighCostAppGenre";
 
@@ -239,13 +240,18 @@ function App() {
         </p>
         <hr />
         <h3>
-          Count of Apps for Each Genre Costing Over $20 w/ Tooltips (Bar Chart)
+          Price and Rating Count Totals for All Apps w/ Tooltips (Scatterplot):
+        </h3>
+        <PriceRatingCount />
+        <hr />
+        <h3>
+          Count of Apps for Each Genre Costing Over $20 w/ Tooltips (Bar Chart):
         </h3>
         <HighCostAppGenre />
         <hr />
         <h3>
           User Rating and Rating Count Totals for a Given Genre w/ Tooltips
-          (Scatterplot)
+          (Scatterplot):
         </h3>
         <AppRatingCount />
       </section>
