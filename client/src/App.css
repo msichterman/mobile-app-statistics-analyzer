@@ -33,7 +33,6 @@ a {
 }
 
 section {
-  height: 400px;
   padding: 20px 100px;
 }
 
@@ -47,4 +46,30 @@ section:nth-child(odd) {
 
 label {
   color: var(--secondary-color);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 1120px) {
+  .list-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .column {
+    width: 600px;
+  }
+}
+
+.left > li:nth-child(odd) {
+  color: var(--main-color);
+}
+
+.right > li:nth-child(even) {
+  color: var(--main-color);
 }
