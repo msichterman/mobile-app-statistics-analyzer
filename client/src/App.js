@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import AppRatingCount from "./components/AppRatingCount/AppRatingCount";
+import HighCostAppGenre from "./components/HighCostAppGenre/HighCostAppGenre";
 
 function App() {
   return (
@@ -87,7 +88,7 @@ function App() {
       <section id="data-visualization">
         <h2>Data Visualization</h2>
         <p>
-          The dimension of the raw data is 15 as there are that many features.
+          The dimension of the raw data is 16 as there are that many features.
           The dimensionality reduction technique that we used was simply taking
           two specific features and comparing them directly. This allows us to
           simply compare various fields of the applications and makes our
@@ -97,10 +98,15 @@ function App() {
           </a>{" "}
           to create interactive visualizations for the data.
         </p>
-        <hr></hr>
+        <hr />
         <h3>
-          App Rating Count Totals w/ User Rating & Price Tooltips (Choose Apps
-          by Genre)
+          Count of Apps for Each Genre Costing Over $20 w/ Tooltips (Bar Chart)
+        </h3>
+        <HighCostAppGenre />
+        <hr />
+        <h3>
+          User Rating and Rating Count Totals for a Given Genre w/ Tooltips
+          (Scatterplot)
         </h3>
         <AppRatingCount />
       </section>
