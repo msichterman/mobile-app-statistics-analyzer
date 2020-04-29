@@ -41,6 +41,7 @@ function App() {
           </a>
           .
         </p>
+        <br />
         <p>
           <strong>Description (from the dataset source):</strong>
           <br />

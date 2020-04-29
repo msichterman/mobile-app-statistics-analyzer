@@ -11,6 +11,7 @@ h1 {
 
 h3 {
   color: var(--main-color);
+  margin-bottom: 5px !important;
 }
 
 #course {
@@ -19,6 +20,7 @@ h3 {
 
 p {
   color: var(--secondary-color);
+  margin: 0 !important;
 }
 
 a {
@@ -52,17 +54,19 @@ label {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
   justify-content: space-around;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 1120px) {
   .list-container {
     flex-direction: column;
-    justify-content: center;
   }
 
   .column {
-    width: 600px;
+    width: 100%;
+    padding: 0 100px;
   }
 }
 
