@@ -67,9 +67,7 @@ The technologies used for the project follow the MERN Stack: MongoDB, ExpressJS,
    
 Now the repository should be completely setup and ready to begin development!
 
-**2). Modeling the data**
-
-**3). Importing the data into the MongoDB database**
+**2). Importing the data into the MongoDB database**
 * Navigate to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and sign in (I use my Google account)
 * Create a new project, I named it ```CSCE411FinalProject```
 * Under the ```Clusters``` tab in the sidebar, select ```Build a New Cluster```
@@ -88,31 +86,6 @@ Now the repository should be completely setup and ready to begin development!
 * Add the ```--headerline``` to the end of the pasted snippet, then add ```csv``` as the ```<FILETYPE>``` and ```AppleStore.csv``` as the ```<FILENAME>```.
    
 This will populate the applications collection by creating documents for each application in the AppleStore.csv file. Check the collection on MongoDB Atlas to ensure that the data was successfully imported.
-
-**4). Analyzing the data**
-
-**5). Creating the APIs to access the database**
-
-**6). Consuming the APIs on the front end**
-
-**7). Visualizing the data**
-
-**8). Putting on the finishing touches**
-
-## Dataset
-TODO
-
-## Data Modeling
-TODO
-
-## Data Preprocessing
-TODO
-
-## Data Analysis
-TODO
-
-## Data Visualization
-TODO
 
 ## Get In Touch
 * Follow me on [Twitter](https://twitter.com/mattsichterman)
