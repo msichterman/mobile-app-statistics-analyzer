@@ -13,11 +13,9 @@ The goal of the project was to facilitate the process of deriving business intel
 - Store data in a database (NoSQL/MySQL/graph stores or some combinations) by following the principles of end-to-end data analysis workflow. You must be able to justify your modeling decisions.
 - Enable web-based visualization by creating a JavaScript based web-application. You may use D3 API for visualization.
 
-![](End-to-EndAppDemo.gif)
+![](FinalProjectDemo.gif)
 
 ## Technologies
-### Data Preprocessing
-* Python?
 ### MERN Stack - **MongoDB, ExpressJS, React, NodeJS**
 ### Back-End
 * Node.js
@@ -29,6 +27,31 @@ The goal of the project was to facilitate the process of deriving business intel
    * [React](https://reactjs.org/)
 * HTML
 * CSS
+
+## Getting Started
+In order to use the application locally, you'll need to do a few things first.
+
+1. Clone this repository and `cd` into the repository's directory
+```
+git clone https://github.com/msichterman/CSCE411-FinalProject.git && cd ./CSCE411-FinalProject
+```
+
+2. Install all of the `node_modules` required for the project. Depending on your computer's configuration, you may need to prefix this command with a `sudo`.
+```
+npm install && npm run client-install
+```
+or
+```
+sudo npm install && sudo npm run client-install
+```
+
+3. Lastly, run the following command to get the project off the ground. This command will not only build your JS files, but it will also auto-compile your files on every file save. This allows for hot reloading on-save when the backend and/or frontend code is updated.
+
+```
+npm run dev
+```
+
+4. Head over to [http://localhost:3000](http://localhost:3000) to see the application live!
 
 ## Reproducing the Entire Project
 **1). Creating the project structure**
