@@ -77,3 +77,17 @@ label {
 .right > li:nth-child(even) {
   color: var(--main-color);
 }
+
+#image-container {
+  text-align: center;
+  margin: 20px 0 5px 0;
+}
+
+#image-container > p {
+  color: var(--main-color);
+}
+
+img {
+  width: 60%;
+  height: auto;
+}

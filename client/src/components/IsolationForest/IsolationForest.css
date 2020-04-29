@@ -1,0 +1,44 @@
+:root {
+  --main-color: #1774e4;
+  --secondary-color: #36454f;
+  --secondary-bg: #eee;
+}
+
+#isolation-forest {
+  margin: 50px 0 30px 0;
+}
+
+#results {
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid var(--secondary-color);
+  width: 100%;
+}
+
+#results td,
+#results th {
+  border: 1px solid var(--secondary-color);
+  padding: 8px;
+}
+
+#results tr:nth-child(even) {
+  background-color: white;
+}
+
+#results tr:hover {
+  background-color: orange;
+}
+
+#results th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.loader {
+  text-align: center;
+  color: var(--main-color);
+}

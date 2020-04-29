@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import IsolationForestComponent from "./components/IsolationForest/IsolationForest";
 import PriceRatingCount from "./components/PriceRatingCount/PriceRatingCount";
 import AppRatingCount from "./components/AppRatingCount/AppRatingCount";
 import HighCostAppGenre from "./components/HighCostAppGenre/HighCostAppGenre";
@@ -187,17 +188,19 @@ function App() {
           entities if applicable? Is there more than one type of entity? Will
           every attribute always have a value? Asking ourselves these questions
           lead us to a couple important conclusions. First, not all attributes
-          were necessary for our purposes. We decided to remove the following
+          were necessary for our purposes. We considered removing the following
           attributes from the original dataset: the number of supported devices,
           the number of preview images provided upon download, the number of
-          languages, and whether VPP device based licensing was enabled. We also
-          looked for relationships between these attributes and determined that
-          each entity instance was independent of the other entity instances.
-          This further solidified our decision to use a NoSQL database. We also
-          found that each entity already contained a unique identifier provided
-          by the dataset. Lastly, we determined that there was only one primary
-          type of entity, and for that type every attribute would always have an
-          existing value.
+          languages, and whether VPP device based licensing was enabled. We
+          ended up using including these futures for future scope purposes, as
+          more analysis of these features could offer some insight into what
+          makes an app successful. We also looked for relationships between
+          these attributes and determined that each entity instance was
+          independent of the other entity instances. This further solidified our
+          decision to use a NoSQL database. We also found that each entity
+          already contained a unique identifier provided by the dataset. Lastly,
+          we determined that there was only one primary type of entity, and for
+          that type every attribute would always have an existing value.
         </p>
         <h3>Physical Modeling</h3>
         <p>
@@ -218,13 +221,53 @@ function App() {
           physical modeling of our data straightforward, and we were able to
           manually create a simple collection of app documents.
         </p>
+        <div id="image-container">
+          <img
+            src="/PhysicalModelingExample.png"
+            alt="Physical model object example"
+          />
+          <p>
+            This image shows an example of the physical modeling in our NoSQL
+            database.
+          </p>
+        </div>
       </section>
       <section id="data-analysis">
         <h2>Data Analysis</h2>
         <p>
-          In order to analyze the data, we used clustering to try to determine
-          what attributes correlate to a successful application.
+          In order to analyze the data, we decided to perform anomaly detection.
+          We used the Isolation Forest algorithm that was discussed in class,
+          and implemented it using a JavaScript library that can be found{" "}
+          <a
+            href="https://www.npmjs.com/package/isolation-forest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
+          .
         </p>
+        <br />
+        <p>
+          Anomaly detection is able to consider data with many features, without
+          having to perform dimensionality reduction. This was ideal for our
+          data set since we were it has many features. This technique allowed us
+          to attempt to isolate anomalies from features that we did not consider
+          in our visualizations below. For this specific instance, we decided to
+          consider only features that represent the apps a whole, rather than
+          considering version specific ratings. Therefore, we considered only
+          the price, rating_count_total, and user_rating features for this
+          analysis. For this algorithm, an anomoly score close to 1 means that
+          the app is definitely an anomoly. For the purpose of displaying the
+          data, only the 10 applications with the highest anomoly score are
+          shown below. The anomoly results could potentially expose an app that
+          did not fit the typical parameters or relationships we found through
+          manual data analysis. Further analysis of any given anomaly for an app
+          may reveal what feature or event triggered the anomaly in the first
+          place and could allow app creators to encourage or avoid that
+          triggering feature.
+        </p>
+        <IsolationForestComponent />
       </section>
       <section id="data-visualization">
         <h2>Data Visualization</h2>

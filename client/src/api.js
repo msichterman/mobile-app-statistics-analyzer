@@ -1,5 +1,14 @@
 import axios from "axios";
 
+export const getApps = () => {
+  return axios
+    .get("http://localhost:5000/api/applications/price-ratings")
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => alert("Error: Unable to fetch genres."));
+};
+
 export const getGenres = () => {
   const options = [];
   axios
