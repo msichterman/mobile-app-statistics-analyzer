@@ -192,15 +192,15 @@ function App() {
           attributes from the original dataset: the number of supported devices,
           the number of preview images provided upon download, the number of
           languages, and whether VPP device based licensing was enabled. We
-          ended up using including these futures for future scope purposes, as
-          more analysis of these features could offer some insight into what
-          makes an app successful. We also looked for relationships between
-          these attributes and determined that each entity instance was
-          independent of the other entity instances. This further solidified our
-          decision to use a NoSQL database. We also found that each entity
-          already contained a unique identifier provided by the dataset. Lastly,
-          we determined that there was only one primary type of entity, and for
-          that type every attribute would always have an existing value.
+          ended up including these features for future scope purposes, as more
+          analysis of these features could offer some insight into what makes an
+          app successful. We also looked for relationships between these
+          attributes and determined that each entity instance was independent of
+          the other entity instances. This further solidified our decision to
+          use a NoSQL database. We also found that each entity already contained
+          a unique identifier provided by the dataset. Lastly, we determined
+          that there was only one primary type of entity, and for that type
+          every attribute would always have an existing value.
         </p>
         <h3>Physical Modeling</h3>
         <p>
