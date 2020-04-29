@@ -13,7 +13,7 @@ The goal of the project was to facilitate the process of deriving business intel
 - Store data in a database (NoSQL/MySQL/graph stores or some combinations) by following the principles of end-to-end data analysis workflow. You must be able to justify your modeling decisions.
 - Enable web-based visualization by creating a JavaScript based web-application. You may use D3 API for visualization.
 
-![](End-to-EndAppDemo.gif)
+![](FinalProjectDemo.gif)
 
 ## Technologies
 ### MERN Stack - **MongoDB, ExpressJS, React, NodeJS**
