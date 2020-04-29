@@ -28,6 +28,31 @@ The goal of the project was to facilitate the process of deriving business intel
 * HTML
 * CSS
 
+## Getting Started
+In order to use the application locally, you'll need to do a few things first.
+
+1. Clone this repository and `cd` into the repository's directory
+```
+git clone https://github.com/msichterman/CSCE411-FinalProject.git && cd ./CSCE411-FinalProject
+```
+
+2. Install all of the `node_modules` required for the project. Depending on your computer's configuration, you may need to prefix this command with a `sudo`.
+```
+npm install && npm run client-install
+```
+or
+```
+sudo npm install && sudo npm run client-install
+```
+
+3. Lastly, run the following command to get the project off the ground. This command will not only build your JS files, but it will also auto-compile your files on every file save. This allows for hot reloading on-save when the backend and/or frontend code is updated.
+
+```
+npm run dev
+```
+
+4. Head over to [http://localhost:3000](http://localhost:3000) to see the application live!
+
 ## Reproducing the Entire Project
 **1). Creating the project structure**
 The technologies used for the project follow the MERN Stack: MongoDB, ExpressJS, React, NodeJS. This is a full-stack JavaScript approach utilizing a NoSQL database. This stack allows for a lot of developer freedom, so the project structure is very simple and intuitive with limited boilerplate code. The repository is seperated into two main folders; client and server. The following steps will help to reproduce the same results:
