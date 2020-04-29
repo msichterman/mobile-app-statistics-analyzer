@@ -16,8 +16,6 @@ The goal of the project was to facilitate the process of deriving business intel
 ![](End-to-EndAppDemo.gif)
 
 ## Technologies
-### Data Preprocessing
-* Python?
 ### MERN Stack - **MongoDB, ExpressJS, React, NodeJS**
 ### Back-End
 * Node.js
