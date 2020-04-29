@@ -25,6 +25,8 @@ The goal of the project was to facilitate the process of deriving business intel
 ### Front-End
 * JavaScript
    * [React](https://reactjs.org/)
+   * [D3.js](https://d3js.org/)
+   * [isolation-forest](https://www.npmjs.com/package/isolation-forest)
 * HTML
 * CSS
 
