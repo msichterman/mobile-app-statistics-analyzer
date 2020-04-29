@@ -73,7 +73,7 @@ export default function AppRatingCount() {
             .attr("text-anchor", "middle")
             .style("font-size", "24px")
             .style("text-decoration", "underline")
-            .text(`Price vs. Total Rating Count for All Apps`)
+            .text(`Total Rating Count vs. Price for All Apps`)
             .style("fill", "#1774e4");
 
           // X axis label

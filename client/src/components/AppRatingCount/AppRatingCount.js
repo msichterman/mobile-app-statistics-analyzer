@@ -81,7 +81,7 @@ export default function AppRatingCount() {
             .style("font-size", "24px")
             .style("text-decoration", "underline")
             .text(
-              `User Rating vs. Total Rating Count of Apps for Genre: ${genre.label}`
+              `Total Rating Count vs. User Rating of Apps for Genre: ${genre.label}`
             )
             .style("fill", "#1774e4");
 

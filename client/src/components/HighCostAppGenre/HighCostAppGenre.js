@@ -77,7 +77,7 @@ export default function HighCostAppGenre() {
             .attr("text-anchor", "middle")
             .style("font-size", "24px")
             .style("text-decoration", "underline")
-            .text("Count of Apps for Each Genre Over $20")
+            .text("Count of Apps vs. Genre for Apps Over $20")
             .style("fill", "#1774e4");
 
           // X axis label
