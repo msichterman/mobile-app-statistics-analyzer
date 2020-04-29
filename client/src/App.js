@@ -257,10 +257,10 @@ function App() {
           consider only features that represent the apps a whole, rather than
           considering version specific ratings. Therefore, we considered only
           the price, rating_count_total, and user_rating features for this
-          analysis. For this algorithm, an anomoly score close to 1 means that
-          the app is definitely an anomoly. For the purpose of displaying the
-          data, only the 10 applications with the highest anomoly score are
-          shown below. The anomoly results could potentially expose an app that
+          analysis. For this algorithm, an anomaly score close to 1 means that
+          the app is definitely an anomaly. For the purpose of displaying the
+          data, only the 10 applications with the highest anomaly score are
+          shown below. The anomaly results could potentially expose an app that
           did not fit the typical parameters or relationships we found through
           manual data analysis. Further analysis of any given anomaly for an app
           may reveal what feature or event triggered the anomaly in the first
