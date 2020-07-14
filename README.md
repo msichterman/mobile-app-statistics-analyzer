@@ -1,4 +1,4 @@
-# Final Project - End-to-End Entity-Relationship (E-R) Data Analysis Workflow
+# Mobile App Statistics App  - Final Project
 ***Disclaimer: This repository is public to showcase skills developed from this assignment. I am in no way reponsible for any academic integrity issues should any code be re-used or copied from any part of this assignment.**
 
 ## Motivation
