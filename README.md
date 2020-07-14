@@ -1,4 +1,4 @@
-# Mobile App Statistics App  - Final Project
+# Mobile App Statistics Analyzer  - Final Project
 ***Disclaimer: This repository is public to showcase skills developed from this assignment. I am in no way reponsible for any academic integrity issues should any code be re-used or copied from any part of this assignment.**
 
 ## Motivation
